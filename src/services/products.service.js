@@ -4,6 +4,6 @@ export async function getAllProducts() {
     return await productsModel.getAllProducts();
 }
 
-export async function getProductsById(id) {
-    return await productsModel.getProductsById(id);
+export async function getProductById(id) {
+    return await productsModel.getProductById(id);
 }

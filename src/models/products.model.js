@@ -16,7 +16,7 @@ export async function getAllProducts() {
     }
 }
 
-export async function getProductsById(id) {
+export async function getProductById(id) {
     try {
         const docReference = doc(productsCollection, id);
         const docSnapshot = await getDoc(docReference);
