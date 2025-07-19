@@ -24,3 +24,11 @@ export const getProductById = async (req, res) => {
     }
 };
 
+export const createProduct = async (req, res) => {
+    try {
+        const newProduct = await productsService.createProduct(req.body);
+        res.status(201).json(newProduct);
+    } catch (err) {
+        res.status(500).json({error: err.message});
+    }
+}
