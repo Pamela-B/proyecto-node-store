@@ -11,3 +11,7 @@ export async function getProductById(id) {
 export async function createProduct(body) {
     return await productsModel.createProduct(body);
 }
+
+export async function deleteProduct(id) {
+    return await productsModel.deleteProduct(id);
+}

@@ -34,3 +34,17 @@ export async function createProduct(data) {
         throw new Error(`Error while attempting to create a new product. // Error message: ${err.message}`);
     }
 }
+
+export async function deleteProduct(id) {
+    try {
+        const docRef = doc(productsCollection, id);
+        const docSnapshot = await getDoc(docRef);
+        if (!docSnapshot.exists()) {
+            return false;
+        }
+        await deleteDoc(docRef);
+        return true;
+    } catch (err) {
+        throw new Error(`Error while attempting to delete product ID ${id} // Error message: ${err.message}`);
+    }
+}
