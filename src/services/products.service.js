@@ -7,3 +7,7 @@ export async function getAllProducts() {
 export async function getProductById(id) {
     return await productsModel.getProductById(id);
 }
+
+export async function createProduct(body) {
+    return await productsModel.createProduct(body);
+}
