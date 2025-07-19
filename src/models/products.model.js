@@ -28,8 +28,7 @@ export async function getProductById(id) {
 
 export async function createProduct(data) {
     try {
-        const newProduct = { id, data.name, data.price, data.category }
-        const docRef = await addDoc(productsCollection, newProduct);
+        const docRef = await addDoc(productsCollection, data);
         return { id: docRef.id, ...data };
     } catch (err) {
         throw new Error(`Error while attempting to create a new product. // Error message: ${err.message}`);
