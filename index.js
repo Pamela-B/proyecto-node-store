@@ -21,7 +21,7 @@ app.use('/auth', loginRouter);
 
 
 app.use((req, res) => {
-    res.status(404).json({error: "Not Found"});
+    res.status(404).json({error: "Request not Found"});
 });
 
 const PORT = 3000;

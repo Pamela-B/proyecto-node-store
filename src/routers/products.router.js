@@ -7,4 +7,5 @@ router.get('/:id', productsController.getProductById)
 
 router.post('/create', productsController.createProduct)
 
+router.delete('/:id', productsController.deleteProduct)
 export default router;

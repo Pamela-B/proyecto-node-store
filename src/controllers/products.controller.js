@@ -32,3 +32,17 @@ export const createProduct = async (req, res) => {
         res.status(500).json({error: err.message});
     }
 }
+
+export const deleteProduct = async (req, res) => {
+    try {
+        const productID = req.params.id;
+        const product = await productsService.deleteProduct(productID);
+        if (!product) {
+            return res.status(404).json({error: `Can't delete product ID: ${productID}. Product not found`});
+        }
+        await productsService.deleteProduct(productID);
+        res.status(200).send(`Product with ID: ${productID} was deleted successfully.`);
+    } catch (err) {
+        res.status(500).json({error: err.message});
+    }
+}
