@@ -1,5 +1,5 @@
 import {db} from '../config/db.js'
-import {collection, doc, getDoc, getDocs, addDoc, deleteDoc,setDoc} from 'firebase/firestore';
+import {collection, doc, getDoc, getDocs, addDoc, deleteDoc, setDoc} from 'firebase/firestore';
 
 const productsCollection = collection(db, 'products');
 
@@ -29,7 +29,7 @@ export async function getProductById(id) {
 export async function createProduct(data) {
     try {
         const docRef = await addDoc(productsCollection, data);
-        return { id: docRef.id, ...data };
+        return {id: docRef.id, ...data};
     } catch (err) {
         throw new Error(`Error while attempting to create a new product. // Error message: ${err.message}`);
     }
