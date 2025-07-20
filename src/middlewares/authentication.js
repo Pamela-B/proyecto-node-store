@@ -3,7 +3,6 @@ import 'dotenv/config';
 
 const secret_key = process.env.JWT_SECRET_KEY;
 
-// Middleware para verificar el token JWT
 export const authentication = (req, res, next) => {
     const token = req.headers['authorization']?.split(" ")[1];
 
